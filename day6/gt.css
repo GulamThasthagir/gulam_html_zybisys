@@ -28,9 +28,7 @@ table,td{
     padding: 16px;
     width: 10px;
 }
-#color{
-    background-color: brown;
-}
+
 body{
     background-color: bisque;
     border: 2px solid red;
@@ -38,6 +36,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background:noscrol;
 }
 #row2{
     

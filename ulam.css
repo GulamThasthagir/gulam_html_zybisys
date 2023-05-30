@@ -1,0 +1,24 @@
+#text{
+    background-color: pink;
+    background-size: 60px;
+}
+.number{
+    color: blue;
+    margin-left:  50px;
+    font-size: 35px;
+}
+.number+p{
+    margin-left: 50px;
+    font-size: 30px;
+    color:blueviolet;
+}
+ul{
+    list-style: none;
+    margin-left: 50px;
+    font-size: 30px;
+}
+input[type="text"]{
+    margin-left:6%;
+    width:30%;
+    margin-bottom: 20px;
+}
