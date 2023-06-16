@@ -1,0 +1,27 @@
+var detile=[]
+function students(name,email,age,phone){
+    var gulam ={
+        name:name,
+        email:email,
+        age:age,
+        phone:phone
+    }
+    detile.push(gulam)
+    }
+//adding students
+students("gulam","gt@gmail.com","18","7550325332");
+students("ajit","ajit@gmail.com","119","7523652332");
+students("saran","saran@gmail.com","28","7550980332");
+students("deebak","deebak@gmail.com","19","7580325332");
+students("ganesh","ganesh@gmail.com","18","7550326432");
+students("tharun","tharun@gmail.com","18","7550325333");
+ console.log(detile);
+
+// var uppercase=detile.map(function(ajit){
+//     return ajit.name.toUpperCase();
+// });
+// console.log(uppercase);
+
+var salih=detile.filter(function(a){
+  return a.age.filter();
+});

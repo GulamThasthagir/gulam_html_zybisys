@@ -1,0 +1,33 @@
+// // //split
+let a="apple";
+let b=String(a).split('');
+console.log(b)
+
+let c="gulam"
+let d=String(c).split('')
+console.log(d)
+
+for(let i=0;i<a.length;i++)
+for(let l=0;l<d.length;l++)
+if(i==l){
+  let m=a[i]+d[l];
+console.log(m);
+}
+// /#split
+//  let a="abc"
+//  let b=String(a).split('');
+//  console.log(b);
+// parse Int
+// let a="XYZ20"
+// let b="2000tr"
+// // console.log(parseInt(b))
+//  parse float
+//  let b=("1.99")
+//  let c=("am 24")
+// //  console.log(parseFloat(b))
+//  concat
+// let a=[2,1];
+// let b=[3,1];
+// console.log(a.concat(b));
+
+
