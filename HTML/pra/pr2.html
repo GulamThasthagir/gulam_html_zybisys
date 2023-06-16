@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        text-align: center;
+        margin-bottom: 10px;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="timer">00:00</div>
+      <button onlick="pause">Pause</button>
+      <button onlick="stop">stop</button>
+    </div>
+    <script>
+      var timer;
+      var tym = document.getElementById("timer");
+      (function () {
+        var sec = 0;
+        timer = setInterval(() => {
+          tym.innerHTML = "00:0" + sec;
+          sec++;
+        }, 1000);
+      })();
+
+      let myVar = setInterval(myTimer, 1000);
+      function myTimer() {
+        const d = tym();
+        document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+      }
+    </script>
+  </body>
+</html>

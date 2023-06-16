@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>promise</h1>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+    <input type="submit" id="submit" value="Add Task" onclick="insert()" />
+    <ul id="list"></ul>
+
+    <script>
+      let input = document.getElementById("name");
+      let btn = document.getElementById("submit");
+
+      function loader(jet) {
+        if (jet == true) {
+          btn.disabled = true;
+          btn.value = "loading";
+        } else {
+          btn.disabled = false;
+          btn.value = "addTask";
+        }
+      }
+
+      function trigger(value) {
+        return new Promise(function (resolve, reject) {
+          loader(true);
+          setTimeout(function () {
+            if (value.length <= 7) {
+              resolve(value);
+            } else {
+              reject("plz enter the 7 alphabets");
+            }
+            loader(false);
+          }, 2000);
+        });
+      }
+
+      function insert() {
+        let val = input.value;
+
+        trigger(val)
+          .then(function (response) {
+            event(response);
+          })
+          .catch(function (error) {
+            alert(error);
+          });
+      }
+
+      function event(name) {
+        let ul = document.getElementById("list");
+        let li = document.createElement("li");
+        li.innerHTML = name;
+        ul.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

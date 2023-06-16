@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Ashync</h1>
+     <section> 
+     <form>
+         <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <input type="button" value="submit" onclick="addtask()">
+          <section>
+            <li id="ulla"></li>
+            </section>
+    <script>
+        let input=document.getElementById("name");
+        let btn=document.getElementById("submit");
+
+
+
+        function trigger(data){
+                 return new Promise(function (resolve,response)
+        {
+            setTimeout(function (){
+                if(data.length<=7)
+             {
+                resolve(data)
+             }
+             else{
+                response("plz write 7 letters")
+             }
+
+             },2000)   
+    })
+}
+        
+        
+        function addtask(){
+            let name=input.value;
+        }
+    trigger(name)
+         .then(function (response) {
+                    addTaskResponse(response)
+                    clearInput()
+                })
+                .catch(function(err){
+                    alert(err)
+                })
+
+
+
+          function addTaskResponse(name){
+            let li=document.getElementById("ulla");
+            li.textContent=name;
+            li.push(ulla);
+          }
+    
+
+
+          
+        
+        
+        
+        
+        
+    //     {          
+    //     trigger(val)
+        
+        
+    //     {.then(function(response)
+    //         {
+    //         let ui=document.getElementById("mylist");
+    //         let li=document.createElement("li");
+    //         li.innerHTML=response;
+    //         ui.appendChild(li);
+    //         })
+    //         .catch(function(response){
+    //         alert(response)
+    //         })  
+    // }
+        
+    </script>
+</body>
+</html>

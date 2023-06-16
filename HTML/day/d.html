@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="d.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section1">
+        <form id="newform">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" />
+          <label for="date">D.O.B:</label>
+          <input type="date" id="date" name="date" required />
+          <input type="submit" value="submit" />
+        </form>
+        <div class="section2">
+          <table id="table">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Dob</th>
+              <th>Action</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("newform")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let dob = document.getElementById("date").value;
+
+          let table = document.getElementById("table");
+          let row = table.insertRow(-1);
+          let cell1 = row.insertCell(0);
+          let cell2 = row.insertCell(1);
+          let cell3 = row.insertCell(2);
+          let cell4 = row.insertCell(3);
+          cell1.innerHTML = name;
+          cell2.innerHTML = email;
+          cell3.innerHTML = dob;
+          cell4.innerHTML =
+            '<input type="button" value="Delete" id="delete" />' +
+            '<input type="button" value="Edit" onclick="edit(this)" />';
+
+          console.log(name);
+          console.log(email);
+          console.log(dob);
+        });
+      function edit(btn) {
+        let row = btn.parentNode.parentNode;
+        document.getElementById("name").value = row.cells[0].innerHTML;
+        document.getElementById("email").value = row.cells[1].innerHTML;
+        document.getElementById("age").value = row.cells[2].innerHTML;
+
+        let submitbutton = document.querySelector("input[type=submit]");
+        submitButton.value = "update";
+      }
+      function Delete(btn){
+        let row=btn.parentNode.parentNode;
+        
+
+
+      }    </script>
+  </body>
+</html>

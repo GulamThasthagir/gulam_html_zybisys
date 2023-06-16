@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Timer</h1>
+    <div class="conatainer">
+        <p><span="seconds">00:<span="tym">00</p>
+        
+    <button class="btn-start" onclick="insert()">start</button>
+    <button class="btn-stop"  onclick="insert()">stop</button>
+    <button class="btn-reset" onclick="insert()">reset</button>
+
+    <script>
+        var seconds="00";
+        var tym = "00";
+        var outputSeconds=document.getElementById('second')
+        var outputTym=document.getElementById('tym')
+        var buttonStart=document.getElementById('btn-start')
+        var buttonStart=document.getElementById('btn-stop')
+        var buttonStart=document.getElementById('btn-reset')
+
+        buttonStart.addEventListener('click',()=>{
+          clearInterval(timer);
+          timer=setInterval(startTime,0)
+        });
+
+        buttonStop.addEventListener('click',()=>{
+          clearInterval(timer);
+        });
+        buttonReset.addEventListener('click',()=>{
+          clearInterval(timer);
+          tym="00"
+          seconds="00"
+          outputSeconds.innerHTML=seconds; 
+          outputSecond.innerHTML=tym;
+        });
+        function startTime(){
+            tym++;
+            if(tym<=9){
+              outputSecond.innerHTML="0"+second;
+            }
+            if(second>99){
+                seconds++;
+                second=0;
+                outputSecond.innerHTML="0"+seconds;
+
+            }
+        }
+
+        
+
+    
+    </script>
+  </body>
+</html>
